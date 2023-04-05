@@ -16,17 +16,15 @@ fn main() {
     ab.sort();
 
     for x in a.iter() {
-        match ab.binary_search(&x) {
-            Ok(r) => print!("{} ", r + 1),
-            Err(_) => (),
+        if let Ok(r) = ab.binary_search(&x) {
+            print!("{} ", r + 1);
         }
     }
     println!();
 
     for x in b.iter() {
-        match ab.binary_search(&x) {
-            Ok(r) => print!("{} ", r + 1),
-            Err(_) => (),
+        if let Ok(r) = ab.binary_search(&x) {
+            print!("{} ", r + 1);
         }
     }
     println!();
